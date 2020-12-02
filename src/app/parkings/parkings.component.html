@@ -1,0 +1,10 @@
+<mat-spinner style='margin: 0 auto;' diameter=30 *ngIf='!isLoaded'></mat-spinner><br>
+<mat-card *ngFor="let parking of parkings" class="parking-card" [routerLink]="['/parking', parking.identifiant]">
+        
+        <span style="font-weight: bold;">Nom : {{parking.nom}} </span><span style="float: right" [ngStyle] ="styleStatut(parking)">{{parking.statut}}</span><br>
+        <div>Nombre de places disponibles : {{parking.nbPlacesDispo}}</div>
+        <div>Nombre de places totales : {{parking.nbPlacesTotal}}</div>
+        <div>Heure de mise à jour : {{parking.heureMaj}}</div>
+    </mat-card>
+   
+    
